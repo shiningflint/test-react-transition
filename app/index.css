@@ -459,11 +459,26 @@ html {
 html, body {
   width: 100%;
   height: 100%;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    Helvetica Neue,
+    sans-serif;
 }
-
+p {
+  margin-bottom: 14px;
+}
 img {
   max-width: 100%;
   vertical-align: center;
+}
+.center {
+  text-align: center;
 }
 .app {
   height: 100%;
@@ -515,4 +530,55 @@ img {
   opacity: 0;
   transform: scaleY(0);
   transition: opacity 300ms, transform 300ms;
+}
+
+/*GEAR CSS*/
+.gearwrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#4ECDC4, #556270);
+}
+.input-label {
+  display: inline-block;
+  color: white;
+  font-size: 1em;
+  margin-bottom: 7px;
+  font-family: 'Open Sans', sans-serif;
+}
+.input {
+  display: inline-block;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  font-size: 1.999em;
+  box-sizing: border-box;
+  border: none;
+  width: 60px;
+  font-family: 'Open Sans', sans-serif;
+}
+.btn {
+  display: block;
+  width: 100%;
+  background-color: #544086;
+  font-size: 16px;
+  color: white;
+  border: 3px solid #544086;
+  padding: 8px 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .2s background-color, .2s color;
+}
+.btn:hover {
+  color: #544086;
+  background-color: #bdfffb;
+}
+.result {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 3.998em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
 }
