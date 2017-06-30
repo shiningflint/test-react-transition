@@ -1,6 +1,7 @@
 import React from 'react';
 import Content from './Content';
 import Button from './Button';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 class App extends React.Component {
   constructor (props) {
@@ -14,19 +15,21 @@ class App extends React.Component {
   }
 
   toggleContent(e) {
-    if (this.state.content === true) {
-      return this.setState({content: false});
-    } else {
-      return this.setState({content: true});
-    }
+    return this.setState({content: !this.state.content});
   }
 
   render () {
     return (
       <div>
+        <CSSTransitionGroup
+          transitionName='contentanim'
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+          >
         {this.state.content === true &&
-          <Content />
+          <Content key="bananakey" />
         }
+        </CSSTransitionGroup>
         <Button handleClick={this.toggleContent} />
       </div>
     )
