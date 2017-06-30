@@ -1,11 +1,12 @@
 import React from 'react';
 
-function Button(props) {
-  return (
-    <div>
-      <button onClick={props.handleClick}>Erase Content!</button>
-    </div>
-  );
+class Button extends React.Component {
+
+  render() {
+    return(
+      <button className='button' onClick={this.props.handleClick}>{this.props.children}</button>
+    );
+  }
 }
 
 export default Button;

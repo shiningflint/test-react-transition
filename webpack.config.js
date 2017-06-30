@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 var config = {
   entry: './app/index.js',
   output: {
@@ -11,13 +12,10 @@ var config = {
     rules: [{
       test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['env']
-        }
-      }
-    }]
+      use: 'babel-loader'
+      },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+    ]
   },
   plugins: [new HtmlWebpackPlugin({
     template: 'app/index.html'
